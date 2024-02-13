@@ -11,7 +11,7 @@ This example consists of 3 parts which are as follows:
     ![Front-end App](/readme.front.png)
 
 3.  A small front-end application that allows user profiles to be notified via web push notifications
-    ![Admin Notifier App](/readme.front.png)
+    ![Admin Notifier App](/readme.admin.png)
 
 ## First for all
 
