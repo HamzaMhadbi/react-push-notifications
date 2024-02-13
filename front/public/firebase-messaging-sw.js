@@ -6,13 +6,14 @@ importScripts(
   'https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging-compat.js',
 );
 
+// TODO: you need to put the configuration of your firebase project
 const firebaseConfig = {
-  apiKey: 'AIzaSyAwPqmGYiPJ-xPo2g1SYRujfjEEoyrXvzU',
-  authDomain: 'web-push-notifications-99dc0.firebaseapp.com',
-  projectId: 'web-push-notifications-99dc0',
-  messagingSenderId: '76728868413',
-  appId: '1:76728868413:web:4ef0be3b4995bfa380d454',
-  measurementId: 'G-X8QYXRJXTK',
+  apiKey: 'apiKey',
+  authDomain: 'authDomain',
+  projectId: 'projectId',
+  messagingSenderId: 'messagingSenderId',
+  appId: 'appId',
+  measurementId: 'measurementId',
 };
 
 // Initialize Firebase
