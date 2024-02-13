@@ -1,0 +1,68 @@
+scalar JSON
+
+enum Gender {
+  male
+  female
+}
+
+enum Role {
+  developer
+  student
+  manager
+}
+
+type Topic {
+  value: String!
+  description: String!
+}
+
+type Profile {
+  id: ID!
+  fullName: String!
+  role: Role!
+  gender: Gender!
+  age: Int!
+  country: String!
+  fcmToken: String
+  topics: [Topic!]
+}
+
+input ProfileInput {
+  id: ID!
+  fullName: String!
+  role: Role!
+  gender: Gender!
+  age: Int!
+  country: String!
+}
+
+input NotificationInput {
+  title: String!
+  body: String!
+  icon: String
+  image: String
+  badge: String
+  link: String
+  vibrate: [Int!]
+  requireInteraction: Boolean
+  silent: Boolean
+}
+
+input NotificationContextInput {
+  uids: [ID!]
+  condition: String
+  notification: NotificationInput!
+  data: JSON
+}
+
+type Query {
+  me: Profile
+  profile(id: ID!): Profile
+  profiles: [Profile!]
+}
+
+type Mutation {
+  notify(notificationContext: NotificationContextInput!): Boolean
+  putProfile(profile: ProfileInput!): Profile
+  updateFCMToken(fcmToken: String!): Boolean
+}

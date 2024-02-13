@@ -1,0 +1,9 @@
+front/*
+!front/src
+!front/public
+admin/*
+!admin/src
+!admin/public
+!**/*.md
+dist
+node_modules

@@ -1,0 +1,10 @@
+**/*.md
+**/dist
+**/build
+.git*
+hooks
+**/node_modules
+npm-debug.log
+.vscode
+**/.env*
+src/__generated__

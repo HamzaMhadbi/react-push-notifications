@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.eslintrc.js
+.vscode
+.idea
+.husky/
+front/
+src/__generated__

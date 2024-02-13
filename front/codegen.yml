@@ -1,0 +1,10 @@
+schema: 'http://127.0.0.1:3001/graphql'
+documents:
+  - 'src/**/*.{ts,tsx}'
+generates:
+  # Specify where our generated types should live.
+  './src/__generated__/':
+    preset: 'client'
+    presetConfig:
+      gqlTagName: 'gql'
+ignoreNoDocuments: true

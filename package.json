@@ -1,0 +1,62 @@
+{
+  "name": "web-push-notifications",
+  "version": "1.0.0",
+  "description": "web push notifications simulator using graphql and firebase cloud messaging",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10",
+    "yarn": "Please use npm !"
+  },
+  "scripts": {
+    "prettier:cli": "prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "eslint": "eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "lint": "npm run eslint && npm run prettier:check",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "build": "npm run codegen && tsc",
+    "docker:build": "docker build --rm -t web-push-notifications . --no-cache",
+    "compose:start": "docker compose -f docker-compose.yml up --build --remove-orphans --force-recreate",
+    "compose:stop": "docker-compose -f docker-compose.yml down",
+    "prestart": "cp src/schema.graphql dist/schema.graphql",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "firebase cloud messaging",
+    "push",
+    "notifications",
+    "graphql",
+    "react",
+    "apollo server",
+    "apollo client",
+    "firebase"
+  ],
+  "author": "hamza.mhadbi17@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "@as-integrations/fastify": "^2.1.1",
+    "@fastify/cookie": "^9.3.1",
+    "@fastify/cors": "^9.0.1",
+    "@fastify/static": "^7.0.0",
+    "dotenv": "^16.4.1",
+    "fastify": "^4.26.0",
+    "firebase-admin": "^12.0.0",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-resolvers": "4.0.1",
+    "@tsconfig/node-lts": "^20.1.1",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  }
+}

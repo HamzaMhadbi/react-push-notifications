@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  graphql-web-push:
+    container_name: web-push-notifications
+    image: web-push-notifications:latest
+    build:
+      context: .
+      args:
+        - NODE_ENV=production
+    env_file:
+      - './front/.env.prod'
+      - './.env.prod'
+    ports:
+      - '3000:3000'
+    networks:
+      - local-network
+
+  admin-web-push:
+    container_name: admin-web-push-notifications
+    image: admin-web-push-notifications:latest
+    build:
+      context: ./admin
+      args:
+        - HOST=0.0.0.0
+        - PORT=80
+    env_file:
+      - './admin/.env.prod'
+    ports:
+      - '3003:80'
+    networks:
+      - local-network
+
+networks:
+  local-network:
+    name: local-network
+    driver: bridge

@@ -1,0 +1,46 @@
+body {
+  overflow: auto;
+}
+
+#app-container {
+  padding: 2rem;
+}
+
+.notifications-container {
+  background-color: rgba(243, 246, 248, 1);
+}
+
+.form-container {
+  border-radius: 6px;
+  box-shadow: 0 4px 28px rgba(123, 151, 158, 0.25);
+  border: 1px solid #d6dee1;
+  padding: 1rem;
+
+  .img-preview {
+    height: 60px;
+    width: 60px;
+    border-radius: 10%;
+    border: 1px solid #d6dee1;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  .form-switch {
+    label {
+      font-weight: 300;
+    }
+  }
+
+  button {
+    float: right;
+  }
+
+  @media (max-width: 768px) {
+    .btn-sm {
+      margin: 10px 0 10px 0;
+    }
+  }
+  
+}
